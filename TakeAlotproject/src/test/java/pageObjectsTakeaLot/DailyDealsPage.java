@@ -24,5 +24,10 @@ public void ClickFirstItem() {
 	ClickElement(By.xpath("//a[contains(@class, 'product-anchor product-card-module_product-anchor_TUCBV')]"));
 }
 
+	
+
+
+
+
 
 }
