@@ -37,11 +37,11 @@ public class AddToCartPage extends BasePage {
 	}
 
 	public void SelectQuantity() {
-		selectDropown(By.id("cart-item_undefined"), "2");
+		selectDropdown(By.id("cart-item_undefined"), "2");
 	}
 
 	public void SelectQuantityParameterized(String quantity) {
-		selectDropown(By.id("cart-item_undefined"), quantity);
+		selectDropdown(By.id("cart-item_undefined"), quantity);
 	}
 
 	public String AssertCartValue() {

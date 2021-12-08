@@ -136,7 +136,7 @@ public class BasePage {
 	
 	// Create a method to select the drop down
 
-	public void selectDropown(By pLocator, String pVaue) {
+	public void selectDropdown(By pLocator, String pVaue) {
 		// Create an instance of the dropdown object
 
 		Select sDrpDown = new Select(getElement(pLocator));
