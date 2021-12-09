@@ -77,7 +77,7 @@ public class WishList {
 		
 		
 		@Test
-		public void GIVEN_Select_Product_WHEN_Cart_Amount_Is_More_Than_R450_THEN_Get_Free_Delivery() {
+		public void GIVEN_Select_Product_AND_Increase_Quantity_WHEN_Cart_Amount_Is_More_Than_R450_THEN_Get_Free_Delivery() {
 			
 //		GIVEN
 		lp.clickAllDepartments();
@@ -92,6 +92,7 @@ public class WishList {
 		lp.clickCartIcon();
 		lp.checkFreeDeliveryMessage();
 		
+//		AND
 		lp.selectQuantity();
 		lp.GetTotalCartAmount();
 		
