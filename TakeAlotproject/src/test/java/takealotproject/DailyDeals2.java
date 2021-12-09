@@ -2,6 +2,7 @@ package takealotproject;
 
 import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -39,7 +40,7 @@ public class DailyDeals2 {
 	}
 	
 
-	@AfterClass
+	@AfterSuite
 	public void cleanup() {
 		lp.cleanUp();
 	}

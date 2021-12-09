@@ -1,6 +1,7 @@
 package pageObjectsTakeaLot;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -16,6 +17,22 @@ public class TakealotLandingPage extends BasePage {
 		if (ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".button.cookies-banner-module_dismiss-button_24Z98")) != null)
 				ClickElement(By.cssSelector(".button.cookies-banner-module_dismiss-button_24Z98"));
 	}
+	
+//	Click Got It
+	public void ClickGotIt() {
+		try {
+			if(driver.findElement(By.xpath("xpath_of_the_desired_element")).isDisplayed())
+				System.out.println("Element is present and displayed");
+			else
+				System.out.println("Element is present but not displayed");
+
+			
+		}	catch (NoSuchElementException e) {
+
+			System.out.println("Element is not present, hence not displayed as well");
+		}
+
+			}
 	
 //	**********************************  DAILY DEALS *****************************
 	
@@ -60,7 +77,6 @@ public class TakealotLandingPage extends BasePage {
 	
 //	Click on TV Series
 	public void clickTVSeries() {
-//		ClickElement(By.xpath("//div[@class='list-item sub']"));	
 		ClickElement(By.xpath("//*[contains(text(), 'TV Series')]"));
 	}
 	
@@ -91,15 +107,14 @@ public class TakealotLandingPage extends BasePage {
 	
 //	Click Add to List
 	public void clickAddToList() {
+		SwitchWindow();
 //		ClickElement(By.xpath("//span[@class='wishlist-split-button-module_text_E0HQC')]"));
-//		ClickElement(By.xpath("//div[@class='wishlist-split-button-module_split-button_2PSmC')]"));
-		ClickElement(By.xpath("//*[@class='button  expanded add-to-cart-button add-to-cart-button-module_add-to-cart-button_1a9gT')]"));  //from add to cart locator to test
+		ClickElement(By.xpath("//div[@class='wishlist-split-button-module_split-button_2PSmC')]"));
 	}
 	
 	
 // Click View Wish List
 	public void clickView() {
-//		ClickElement(By.tagName("View"));
 		ClickElement(By.xpath("//a[@class='toast-content-module_link__wfj6 toast-content-module_inline_F3XBs')]"));
 	}
 
@@ -122,7 +137,7 @@ public class TakealotLandingPage extends BasePage {
 	
 //	Click on Cart Icon
 	public void clickCartIcon() {
-		ClickElement(By.xpath("//button[@safeclass~'\\bbadge-button\\b.*\\bbadge-button-module_badge-button_3TXVp\\b.*\\bbadge-button-module_badge-icon_LvKrF\\b.*\\bbutton\\b.*\\bdark-green\\b.*\\bmini-cart-button\\b']"));
+		ClickElement(By.xpath("//div[@class='mini-cart mini-cart-module_mini-cart_3_CNC')]"));
 	}
 	
 	

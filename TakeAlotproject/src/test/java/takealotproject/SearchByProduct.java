@@ -77,15 +77,16 @@ public class SearchByProduct {
 			hp.GoHome();
 			}
 		}
+		
 		@Test
-		public void GIVEN_First_Item_Is_Selected_THEN_Add_Product_To_Cart_AND_Assert_That_AddedToCart_Appears() {
+		public void GIVEN_First_Item_Is_Selected_WHEN_Add_Product_To_Cart_THEN_Assert_That_AddedToCart_Appears() {
 			//GIVEN
 			sp.ClickSearchForProducts();
 			sp.SearchProduct("adidas sneakers");
-			//WHEN
+			//AND
 			sp.ClickSubmitButtonToSearchForProducts();
 			hp.ClickCookiesButton();			
-			//AND
+			//WHEN
 			sp.ClickFirstItem();
 			addcart.AddToCart();
 			//THEN
@@ -95,8 +96,9 @@ public class SearchByProduct {
 			System.out.println( actual + " is displayed");
 			hp.GoHome();
 		}
+		
 		@Test
-		public void GIVEN_A_Customer_Has_Added_A_Product_In_Cart_AND_Click_Go_To_Cart_Button_THEN_Select_2_Items_As_Quantity() throws InterruptedException, ParseException {
+		public void GIVEN_A_Customer_Has_Added_A_Product_In_Cart_WHEN_Click_Go_To_Cart_Button_THEN_Select_2_Items_As_Quantity() throws InterruptedException, ParseException {
 			//GIVEN
 			sp.ClickSearchForProducts();
 			sp.SearchProduct("sleeping bag");
@@ -116,9 +118,10 @@ public class SearchByProduct {
 	//		int price = Integer.parseInt(itemPrice.substring(2));
 			addcart.AddToCart();
 			
-			//THEN
+			//WHEN
 			addcart.ClickTheGoToCartButton();
-			//AND
+			
+			//THEN
 			addcart.SelectQuantity();
 			Thread.sleep(5000);
 			String cartValue = sp.GetCartValue();
@@ -127,7 +130,7 @@ public class SearchByProduct {
 			System.out.println(cartValue);
 			Assert.assertEquals(cartValue.trim(), totalPrice);
 				
-			//THEN
+			
 			//hp.GoHome();	
 		
 }
@@ -166,8 +169,10 @@ public class SearchByProduct {
 			addcart.SwitchToNewTab();
 			addcart.AddToCart();
 			
+			//AND
 			addcart.ClickTheGoToCartButton();
 		
+			//THEN
 			addcart.SelectQuantityParameterized(quantity.trim());
 			Thread.sleep(5000);
 			String cartValue = sp.GetCartValue();
@@ -183,7 +188,7 @@ public class SearchByProduct {
 				
 			sp.closeCurrentBrowserTab();
 		
-			//THEN
+			
 			//hp.GoHome();
 				
 			

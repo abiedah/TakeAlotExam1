@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TakeAlotProject">
+<listeners>
+<listener class-name="takealotproject.Listeners"/>
+</listeners>
+
+	<test thread-count="5" name="WishList">
+	 <classes>  
+			<class name="takealotproject.WishList" >
+			<methods>
+				<include name="GIVEN_Select_Department_AND_Category_WHEN_Results_Displayed_THEN_Assert_Number_Of_Results" />
+				<include name="GIVEN_Select_Product_AND_Add_To_WishList_WHEN_Cart_Value_Is_Less_THEN_Assert_Message_Spend_More" />
+				<include name="GIVEN_Select_Product_WHEN_Cart_Amount_Is_More_Than_R450_THEN_Get_Free_Delivery" />
+				
+
+			</methods>
+			</class>
+		</classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
